@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%-include('head')%>
+  <body>
+    <%-include('nav')%>
+    <main>
+      <div class="min-h-screen container pt-4 mx-auto border-neutral-content">
+        <div class="grid grid-cols-4 gap-16">
+          <% for(const musician of musicians) { %>
+          <div class="card w-96 bg-info-content shadow-xl">
+            <figure>
+              <img
+                class="w-full h-96 object-cover"
+                src="https://api.infcon2023.roto.codes<%= musician.profileImageUrl %>"
+                alt="이디어츠 프로필"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><%= musician.name %></h2>
+              <p><%= musician.bio %></p>
+              <div class="card-actions justify-end">
+                <a
+                  href="/musicians/<%= musician.slug%>/"
+                  class="btn btn-primary"
+                  >자세히 보기</a
+                >
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

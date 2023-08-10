@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%-include('head')%>
+  <body>
+    <%-include('nav')%>
+    <main>
+      <div
+        class="w-full h-80 bg-no-repeat bg-center bg-cover"
+        style="
+          background-image: url('https://api.infcon2023.roto.codes<%= musician.backgroundImageUrl %>');
+        "
+      ></div>
+      <div class="flex gap-12 px-16 -mt-16">
+        <img
+          class="rounded-full w-32 h-32 object-cover"
+          src="https://api.infcon2023.roto.codes<%= musician.profileImageUrl %>"
+          alt="<%= musician.name %> 프로필"
+        />
+        <div class="flex-col">
+          <div class="text-4xl font-bold text-primary-content mt-6">
+            <%= musician.name %>
+          </div>
+          <div class="text-secondary-content"><%- musician.description %></div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-16">
+        <a class="btn btn-primary" href="/musicians/">목록으로</a>
+      </div>
+    </main>
+  </body>
+</html>
