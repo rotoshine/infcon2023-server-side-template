@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "tailwindcss -i style.css -o ./public/style.css && node app.mjs"
   },
